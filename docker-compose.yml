@@ -1,7 +1,9 @@
-Squid:
-  image: quay.io/sameersbn/squid:3.3.8-2
+squid:
+  # image: quay.io/sameersbn/squid:3.3.8-2
+  build: .
   ports:
     - "3128:3128"
   volumes:
     - /srv/docker/squid/cache:/var/spool/squid3
+    - ./squid.conf:/etc/squid3/squid.conf
   restart: always
